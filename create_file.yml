@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+   - name: Touch a file and set permissions
+     ansible.builtin.file:
+      path: /home/ubuntu/foo.conf
+      state: touch
+      mode: '0644'
